@@ -19,18 +19,19 @@ class StringUtils {
     return reversed;
   }
 
-  static String replaceAll(String str, char character,char replacer) {
-    char[] reversed = new char[str.length()];
+  static String replaceAll(String str, char targetChar,char replaceTo) {
+    String replacedSting = "";
 
     for(int i = 0;  i < str.length(); i++) {
 
-      if(str.charAt(i) == character) {
-        reversed[i] = replacer;
+      if(str.charAt(i) == targetChar) {
+        replacedSting += replaceTo;
         continue;
       }
-      reversed[i] = str.charAt(i);
+
+      replacedSting += str.charAt(i);
     }
 
-    return new String(reversed);
+    return replacedSting;
   }
 }
